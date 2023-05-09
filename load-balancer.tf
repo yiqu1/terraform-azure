@@ -24,6 +24,14 @@ resource "azurerm_lb_probe" "port80" {
   port            = 80
 }
 
+resource "azurerm_lb_probe" "port443" {
+  name            = "tf-lb-probe-443"
+  loadbalancer_id = azurerm_lb.frontend.id
+  protocol        = "Http"
+  request_path    = "/"
+  port            = 443
+}
+
 resource "azurerm_lb_rule" "port80" {
   name                           = "tf-lb-rule-80"
   loadbalancer_id                = azurerm_lb.frontend.id
@@ -33,14 +41,6 @@ resource "azurerm_lb_rule" "port80" {
   frontend_port                  = 80
   backend_port                   = 80
   frontend_ip_configuration_name = "default"
-}
-
-resource "azurerm_lb_probe" "port443" {
-  name            = "tf-lb-probe-443"
-  loadbalancer_id = azurerm_lb.frontend.id
-  protocol        = "Http"
-  request_path    = "/"
-  port            = 443
 }
 
 resource "azurerm_lb_rule" "port443" {
