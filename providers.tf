@@ -1,5 +1,5 @@
 terraform {
-  required_providers {
+  required_providers { # define the required providers
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "=3.0.0"
@@ -8,6 +8,6 @@ terraform {
 }
 
 # Configure the Microsoft Azure Provider
-provider "azurerm" {
+provider "azurerm" {  # no additional configuration options specified
   features {}
 }
