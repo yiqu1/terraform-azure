@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "terraform_sample" {
+resource "azurerm_resource_group" "terraform_sample" { # as a logical container for resources
   name     = "terraform-sample"
   location = var.arm_region
 }
@@ -22,11 +22,4 @@ resource "azurerm_subnet" "my_subnet_backend" {
   resource_group_name  = azurerm_resource_group.terraform_sample.name
   virtual_network_name = azurerm_virtual_network.my_vn.name
   address_prefixes     = ["10.0.2.0/24"]
-}
-
-resource "azurerm_subnet" "my_subnet_dmz" {
-  name                 = "dmz"
-  resource_group_name  = azurerm_resource_group.terraform_sample.name
-  virtual_network_name = azurerm_virtual_network.my_vn.name
-  address_prefixes     = ["10.0.3.0/24"]
 }

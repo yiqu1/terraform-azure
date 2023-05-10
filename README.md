@@ -1,8 +1,8 @@
 # Azure-WebApp-Infrastructure-Deployment-by-Terraform
 
-- Create 
-    - providers.tf ( to configure the provider ) , 
-    - variables.tf ( to keep the variables ) , 
+- Create
+    - providers.tf ( to configure the provider ) ,
+    - variables.tf ( to keep the variables ) ,
     - backend.tf ( to store the tfstate file in the Azure Cloud. Configure the existing or a new storage container )
 
 
@@ -16,9 +16,9 @@
 
 5 - Create a Storage Account. ( independent from the containers that we use to store the BACKEND.TF )
 #
-INSIDE THE VIRTUAL-MACHINES.TF 
+INSIDE THE VIRTUAL-MACHINES.TF
 
-6 - Create a Virtual Machine as well as Availability Set to use the Load Balancer with high availability and more efficiently 
+6 - Create a Virtual Machine as well as Availability Set to use the Load Balancer with high availability and more efficiency
 
 7 - Create a Storage Account Container inside the new storage account.
 
